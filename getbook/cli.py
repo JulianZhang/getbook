@@ -24,12 +24,20 @@ def config_logging(verbose=False):
 
 def load_config():
     config = {}
+    print(sys.platform)
     if sys.platform == 'darwin':
         config = {
             "EBOOK_ENG_REGULAR_FONT": "Avenir.ttc",
             "EBOOK_ENG_BOLD_FONT": ("Avenir.ttc", 2),
             "EBOOK_CJK_REGULAR_FONT": ("PingFang.ttc", 2),
             "EBOOK_CJK_BOLD_FONT": ("PingFang.ttc", 8)
+        }
+    if sys.platform == 'win32':
+        config = {
+            "EBOOK_ENG_REGULAR_FONT": "arial.ttf",
+            "EBOOK_ENG_BOLD_FONT": ("arial.ttf", 2),
+            "EBOOK_CJK_REGULAR_FONT": ("msyh.ttc", 2),
+            "EBOOK_CJK_BOLD_FONT": ("msyh.ttc", 8)
         }
     home_dir = os.path.expanduser('~')
     conf = os.path.join(home_dir, '.getbook/config.json')
