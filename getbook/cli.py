@@ -32,6 +32,13 @@ def load_config():
             "EBOOK_CJK_REGULAR_FONT": ("PingFang.ttc", 2),
             "EBOOK_CJK_BOLD_FONT": ("PingFang.ttc", 8)
         }
+    if sys.platform == 'linux':
+        config = {
+            "EBOOK_ENG_REGULAR_FONT": "Arial.TTF",
+            "EBOOK_ENG_BOLD_FONT": ("Arial.TTF", 2),
+            "EBOOK_CJK_REGULAR_FONT": ("trebucbi.ttf", 2),
+            "EBOOK_CJK_BOLD_FONT": ("trebucbi.ttf", 8)
+        }
     if sys.platform == 'win32':
         config = {
             "EBOOK_ENG_REGULAR_FONT": "arial.ttf",
